@@ -59,6 +59,15 @@ while answer != "yes":
     answer = input("This is the end? ")
 
 while True:
-    comand = input("Write 'Ana' to get out: ")
+    comand = input("Write 'Ana' to exit: ")
     if comand == "Ana":
         break
+
+carrinho_compras = []
+produto = ''
+while produto != 'exit':
+    print('add a product to the list or type "exit" to exit: ')
+    produto = input()
+    carrinho_compras.append(produto)
+for produto in carrinho_compras:
+    print(produto)

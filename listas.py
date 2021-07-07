@@ -15,8 +15,26 @@ else:
 lista1.sort()
 print(lista1)
 
+lista1.reverse()
+print(lista1)
+
 print(lista1.count(1))
 print(lista5.count('a'))
+
+print(lista1[::-1])
+print(lista2[::-1])
+
+lista6 = lista2.copy()
+print(lista6)
+
+print(len(lista1))
+
+lista5.pop()
+lista5.pop(2)
+print(lista5)
+
+# zerar lista
+lista5.clear()
 
 # adicionar elementos
 lista1.extend([123, 2, 3])
@@ -38,9 +56,11 @@ else:
 lista1.insert(2, 'novo valor')
 print(lista1)
 
+# juntar duas listas
+lista7 = lista1 + lista2
+print(lista7)
 
-num = int(input("Enter a number: "))
-n = 0
+num = int(input("Enter a number greater than 1(one): "))
 vet = []
 vet2 = []
 for i in range(1, num+1):
@@ -49,9 +69,8 @@ for i in range(1, num+1):
 for i in range(0, len(vet)):
     if vet[i] > 1:
         vet2.append(vet[i])
-if vet == 1:
-    print("invalid")
-elif vet2[len(vet2)-1] == num:
+if vet2[len(vet2)-1] == num:
     print("Prime number!")
 else:
     print("it's not prime")
+

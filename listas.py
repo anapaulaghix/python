@@ -77,6 +77,12 @@ print(lista1)
 lista7 = lista1 + lista2
 print(lista7)
 
+# shallow copy, deep copy
+new = lista1
+new.append(4)
+new = lista1.copy()
+new.append(4)
+
 # adicionar elementos
 lista1.extend([123, 2, 3])
 print(lista1)

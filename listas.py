@@ -4,14 +4,53 @@ lista3 = []
 lista4 = list(range(11))
 lista5 = list('ana paula')
 
-# verfiicar determinado valor nas listas
+# verificar determinado valor nas listas
 num = 10
 if num in lista4:
     print(f"i find number {num}")
 else:
     print(f"i dont find number {num}")
 
+# iterar sobre listas
+soma = 0
+for element in lista1:
+    soma = soma + element
+print(soma)
+
+soma = ''
+for element in lista2:
+    soma = soma + element
+print(soma)
+
+shopping = []
+product = ''
+while product != 'exit':
+    print("Add a product on list or type 'exit': ")
+    product = input()
+    if product != "exit":
+        shopping.append(product)
+for product in shopping:
+    print(shopping)
+
+colors = ["purple", "black", "white", "red"]
+for cor in colors:
+    print(cor)
+
+index = 0
+while index < len(colors):
+    print(colors[index])
+    index = index + 1
+
+# gerar indice em for
+for index, cor in enumerate(colors):
+    print(index, cor)
+
 # ordenar valores
+print(sum(lista1))
+print(max(lista1))
+print(min(lista1))
+print(len(lista1))
+
 lista1.sort()
 print(lista1)
 
@@ -22,19 +61,21 @@ print(lista1.count(1))
 print(lista5.count('a'))
 
 print(lista1[::-1])
-print(lista2[::-1])
 
 lista6 = lista2.copy()
 print(lista6)
-
-print(len(lista1))
 
 lista5.pop()
 lista5.pop(2)
 print(lista5)
 
-# zerar lista
-lista5.clear()
+# não substitui o valor inicial
+lista1.insert(2, 'novo valor')
+print(lista1)
+
+# juntar duas listas
+lista7 = lista1 + lista2
+print(lista7)
 
 # adicionar elementos
 lista1.extend([123, 2, 3])
@@ -51,26 +92,3 @@ if [1, 2, 3] in lista1:
     print("found the list")
 else:
     print("didn't find the list")
-
-# não substitui o valor inicial
-lista1.insert(2, 'novo valor')
-print(lista1)
-
-# juntar duas listas
-lista7 = lista1 + lista2
-print(lista7)
-
-num = int(input("Enter a number greater than 1(one): "))
-vet = []
-vet2 = []
-for i in range(1, num+1):
-    if i % 2 == 1 or i == 2:
-        vet.append(i)
-for i in range(0, len(vet)):
-    if vet[i] > 1:
-        vet2.append(vet[i])
-if vet2[len(vet2)-1] == num:
-    print("Prime number!")
-else:
-    print("it's not prime")
-

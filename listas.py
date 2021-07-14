@@ -98,3 +98,35 @@ if [1, 2, 3] in lista1:
     print("found the list")
 else:
     print("didn't find the list")
+
+"""
+Tuplas:
+1- Tuplas são imutáveis e qualquer manipulação delas é gerada uma nova. Listas não são imutáveis,
+mas fazendo reatribuição você cria um novo objeto.
+2- Devemos utilizar tuplas sempre que não precisarmos modificar dados
+3- também podem ser representadas sem (), são definidas pela vírgula
+"""
+tupla = (1, 2, 3, 4, 5)
+print(type(tupla))
+tupla1 = 1, 2, 3, 4, 5
+print(type(tupla1))
+
+# funciona como as listas se forem valores inteiros
+print(sum(tupla))
+print(max(tupla))
+print(min(tupla))
+print(len(tupla))
+
+# concatenação (não são alteradas, sobrescrevemos valores)
+tupla2 = (1, 2, 3)
+tupla3 = (4, 5, 6)
+print(tupla2 + tupla3)
+print(tupla2)
+print(tupla3)
+
+meses = ('janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro')
+i = 0
+while i < len(meses):
+    print(meses[i])
+    i = i + 1
+print(meses.index('junho'))

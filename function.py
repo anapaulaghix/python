@@ -19,9 +19,14 @@ def quadrado_7():
     return 7 * 7
 
 
-# parametro
+# parametro obrigatório
 def quadrado(numero):
     return numero * 2
+
+
+# parametro padrão
+def exponent(exponente, potencia=2):
+    return exponente * potencia
 
 
 def parabens(aniversariante):
@@ -50,6 +55,15 @@ def nome(name, sobrenome):   # keyword
     return f"Seu nome completo é {name} {sobrenome}"
 
 
+total = 0
+
+
+def incrementa():
+    global total  # chamando a variável global
+    total = total + 1
+    return total
+
+
 # chamada de execução
 diz_oi()
 for n in range(1):
@@ -60,10 +74,13 @@ print(diz_oi() + alguem)
 print(quadrado(7))
 print(quadrado(15))
 print(joga_moeda())
+print(exponent(3))
+print(exponent(2, 3))
 parabens("Pedro")
 maior(1, 2, 4, 5)
 print(sub(38, 16))
 print(nome(sobrenome="Ghiraldelli", name="Ana Paula"))
+print(incrementa())
 
 # variavel
 ret = quadrado_7()

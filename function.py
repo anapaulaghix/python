@@ -33,6 +33,13 @@ def parabens(aniversariante):
     print(f"Parabéns {aniversariante}")
 
 
+"""
+*args coloca valores extras em uma tupla
+**kwargs exige parametros nomeados e transforma valores extras em um dicionário
+não são parametros obrigatórios
+"""
+
+
 def maior(* num):  # args
     cont = big = 0
     for valor in num:
@@ -47,8 +54,23 @@ def maior(* num):  # args
     print(f"O maior valor foi {big}")
 
 
-def sub(a, b):
-    return a - b
+def adder(*args):
+    sum = 0
+
+    for n in args:
+        sum = sum + n
+
+    print("Sum:", sum)
+
+
+adder(3, 5)
+adder(4, 5, 6, 7)
+adder(1, 2, 3, 5, 6)
+
+
+def coresfav(**kwargs):
+    for pessoa, cor in kwargs.items():
+        print(f'A cor favorita de {pessoa.title()} é {cor}')
 
 
 def nome(name, sobrenome):   # keyword
@@ -71,14 +93,14 @@ for n in range(1):
 alguem = input("Qual seu nome? ")
 print(diz_oi() + alguem)
 
+print(joga_moeda())
 print(quadrado(7))
 print(quadrado(15))
-print(joga_moeda())
 print(exponent(3))
 print(exponent(2, 3))
 parabens("Pedro")
 maior(1, 2, 4, 5)
-print(sub(38, 16))
+coresfav(ana='roxo', pedro='amarelo', julia='azul', vitor='verde')
 print(nome(sobrenome="Ghiraldelli", name="Ana Paula"))
 print(incrementa())
 

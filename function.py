@@ -109,3 +109,28 @@ ret = quadrado_7()
 print(f'return: {ret}')
 
 print(f'return: {quadrado_7() + 1}')
+
+# tempo minimo em minutos para entrarem um um show
+pessoas = int(input("Quantas pessoas? "))
+segundos = float(input("Quantos segundos? "))
+portoes = int(input("Quantos portoes? "))
+
+def tempo_minimo_minutos(pessoas, segundos, portoes):
+     tempo_total = pessoas * segundos
+     tempo_minimo_segundos = tempo_total / portoes
+     tempo_minimo_minutos = tempo_minimo_segundos / 60
+     return tempo_minimo_minutos
+
+print(f"Tempo minimo em minutos: {tempo_minimo_minutos(pessoas, segundos, portoes):.2f}")
+
+# calcular distancia de som em milisegundos ate a ultima pessoa de um show
+distancia_km = float(input("Qual a distancia em km? "))
+
+def tempo_total_milisegundos(distancia_km):
+    velocidade_som_ms = 340
+    velocidade_som_kms = velocidade_som_ms / 1000
+    tempo_total_segundos = distancia_km / velocidade_som_kms
+    tempo_total_milisegundos = tempo_total_segundos * 1000
+    return tempo_total_milisegundos
+
+print(f"Tempo em milisegundos ouvidos pela ultima pessoa: {tempo_total_milisegundos(distancia_km):.2f}")

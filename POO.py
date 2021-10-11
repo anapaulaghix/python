@@ -19,6 +19,26 @@ class Lampada:    # objeto = lâmpada
         self.ligada = False
 
 
+class Conta:
+    contador = 400
+
+    def __init__(self, titular, saldo, limite):
+        self.__numero = Conta.contador
+        self.__titular = titular
+        self.__saldo = saldo
+        self.__limite = limite
+        Conta.contador += 1
+
+    def extrato(self):
+        print(f"saldo de {self.__saldo} do titular {self.__titular} com limite de {self.__limite}")
+
+    def depositar(self, valor):
+        self.__saldo += valor
+
+    def sacar(self, valor):
+        self.__saldo -= valor
+
+
 class Produto:
     imposto = 1.05  # Atributos de classe/estáticos
     contador = 0

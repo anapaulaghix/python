@@ -33,10 +33,23 @@ class Conta:
         print(f"saldo de {self.__saldo} do titular {self.__titular} com limite de {self.__limite}")
 
     def depositar(self, valor):
-        self.__saldo += valor
+        if valor > 0:
+            self.__saldo += valor
+        else:
+            print("O valor precisa ser positivo")
 
     def sacar(self, valor):
+        if valor > 0:
+            if self.__saldo >= valor:
+                self.__saldo -= valor
+            else:
+                print("saldo insuficiente")
+        else:
+            print('Valor deve ser positivo')
+
+    def transferir(self, valor, conta_destino):
         self.__saldo -= valor
+        conta_destino.__saldo += valor
 
 
 class Produto:

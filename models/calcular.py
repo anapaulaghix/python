@@ -43,14 +43,44 @@ class Calcular:
 
     @property
     def _gerar_valor(self: object) -> int:
-        pass
+        if self.dificuldade == 1:
+            return randint(0, 10)
+        elif self.dificuldade == 2:
+            return randint(0, 100)
+        elif self.dificuldade == 3:
+            return randint(1, 1000)
+        elif self.dificuldade == 4:
+            return randint(0, 10000)
+        else:
+            return randint(0, 0)
 
     @property
     def _gerar_resultado(self: object) -> int:
-        pass
+        if self.operacao == 1:
+            return self.valor1 + self.valor2
+        elif self.operacao == 2:
+            return self.valor1 - self.valor2
+        else:
+            return self.valor1 * self.valor2
+
+    @property
+    def op_simbolo(self: object) -> str:
+        if self.operacao == 1:
+            return "+"
+        elif self.operacao == 2:
+            return "-"
+        else:
+            return "*"
 
     def _checar_resultado(self: object, resposta: int) -> bool:
-        pass
+        certo: bool = False
+        if self.resultado == resposta:
+            print("resposta correta")
+            certo = True
+        else:
+            print("resposta errada")
+        print(f"Operação: {self.valor1} {self.op_simbolo} {self.valor2} = {self.resultado}")
+        return certo
 
-    def _mostrar_operacao(self: object) -> None:
-        pass
+    def mostrar_operacao(self: object) -> None:
+        print(f"{self.valor1} {self.op_simbolo} {self.valor2} = ?")

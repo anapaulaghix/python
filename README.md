@@ -1,1 +1,1 @@
-learning python
+Basic exercises using Python for learning logic programming 
